@@ -40,7 +40,7 @@ const Hero = () => {
                 <div className="max-w-3xl mx-auto pt-10 pb-10">
 
                     <div className="text-center justify-center flex flex-col items-center">
-                        <h1 className="text-7xl md:text-8xl font-bold mb-6 tracking-tight leading-snug">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight leading-tight">
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                                 Aumenta tu productividad
                             </span>
