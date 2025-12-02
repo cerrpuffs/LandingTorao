@@ -40,17 +40,17 @@ const Hero = () => {
                 <div className="max-w-3xl mx-auto pt-10 pb-10">
 
                     <div className="text-center justify-center flex flex-col items-center">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight leading-tight">
+                        <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight leading-tight animate-fade-in-up">
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                                 Aumenta tu productividad
                             </span>
                         </h1>
 
-                        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-in-up animation-delay-200">
                             Domina tu estudio. Genera apuntes, resúmenes y flashcards al instante para transformar tu forma de aprender y disparar tus notas.
                         </p>
 
-                        <div className="flex gap-4 justify-center">
+                        <div className="flex gap-4 justify-center animate-fade-in-up animation-delay-400">
                             <Btn variant="accent">Empezar Ahora</Btn>
                             <Btn variant="normal">Contactar Ventas</Btn>
                         </div>

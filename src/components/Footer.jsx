@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LegalModal from './LegalModal';
+import { legalContent } from './LegalContent';
 
 const Footer = () => {
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalContent, setModalContent] = useState({ title: '', content: null });
+
+    const openModal = (title) => {
+        setModalContent({ title, content: legalContent[title] });
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
+
     return (
         <footer className="relative bg-gray-950 pt-10 pb-10 overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
@@ -26,14 +40,24 @@ const Footer = () => {
                             Producto
                         </h3>
                         <ul className="space-y-4">
-                            {['Características', 'Planes de Precio', 'Para Estudiantes', 'Casos de Uso'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm flex items-center gap-2 group">
-                                        <span className="w-0 h-px bg-emerald-400 transition-all duration-300 group-hover:w-3" />
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
+                            <li>
+                                <a href="#caracteristicas" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm flex items-center gap-2 group">
+                                    <span className="w-0 h-px bg-emerald-400 transition-all duration-300 group-hover:w-3" />
+                                    Características
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#precios" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm flex items-center gap-2 group">
+                                    <span className="w-0 h-px bg-emerald-400 transition-all duration-300 group-hover:w-3" />
+                                    Planes de Precio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#producto" className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm flex items-center gap-2 group">
+                                    <span className="w-0 h-px bg-emerald-400 transition-all duration-300 group-hover:w-3" />
+                                    Casos de Uso
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
@@ -43,7 +67,7 @@ const Footer = () => {
                             Compañía
                         </h3>
                         <ul className="space-y-4">
-                            {['Sobre Nosotros', 'Blog', 'Carreras', 'Contacto'].map((item) => (
+                            {['Sobre Nosotros', 'Contacto'].map((item) => (
                                 <li key={item}>
                                     <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-sm flex items-center gap-2 group">
                                         <span className="w-0 h-px bg-blue-400 transition-all duration-300 group-hover:w-3" />
@@ -56,16 +80,19 @@ const Footer = () => {
 
                     <div>
                         <h3 className="text-white font-semibold mb-6 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                             Legal
                         </h3>
                         <ul className="space-y-4">
                             {['Privacidad', 'Términos de Servicio', 'Cookies', 'Seguridad'].map((item) => (
                                 <li key={item}>
-                                    <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-200 text-sm flex items-center gap-2 group">
-                                        <span className="w-0 h-px bg-purple-400 transition-all duration-300 group-hover:w-3" />
+                                    <button
+                                        onClick={() => openModal(item)}
+                                        className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm flex items-center gap-2 group"
+                                    >
+                                        <span className="w-0 h-px bg-emerald-400 transition-all duration-300 group-hover:w-3" />
                                         {item}
-                                    </a>
+                                    </button>
                                 </li>
                             ))}
                         </ul>
@@ -93,6 +120,13 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+
+            <LegalModal
+                isOpen={modalOpen}
+                onClose={closeModal}
+                title={modalContent.title}
+                content={modalContent.content}
+            />
         </footer>
     );
 };

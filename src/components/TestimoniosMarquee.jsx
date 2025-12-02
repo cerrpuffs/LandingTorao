@@ -42,11 +42,11 @@ const TestimoniosMarquee = () => {
                 }
 
                 .marquee-content {
-                    animation: scroll-left 40s linear infinite;
+                    animation: scroll-left 5s linear infinite;
                 }
 
                 .marquee-reverse .marquee-content {
-                    animation: scroll-right 40s linear infinite;
+                    animation: scroll-right 5s linear infinite;
                 }
 
                 .marquee-content.is-paused {

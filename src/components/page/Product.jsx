@@ -43,7 +43,7 @@ const Producto = () => {
                         </p>
 
                         <button className="py-3 px-8 rounded-full bg-green-500 hover:bg-green-400 text-black font-semibold transition duration-300 ease-in-out shadow-lg shadow-green-700/50 hover:shadow-green-600/70 active:scale-95">
-                            Prueba Gratis
+                            Iniciar Ahora
                         </button>
                     </div>
 
